@@ -5,20 +5,25 @@ Another E-commerce built with Laravel Framework
 Be sure to have Composer, Perl and PHP interpreters installed on you local environment.
 
 You may check them by digiting below commands in command line:
+
 ```sh
 which perl
 which composer
 which php
 which mysql
 ```
+
 You should see something like this:
+
 ```sh
 /usr/bin/perl
 /usr/local/bin/composer
 /usr/local/bin/php
 /usr/local/mysql-9.0.0-macos14-x86_64/bin/mysql
 ```
+
 You also may check the program version by digiting following commands:
+
 ```sh
 perl --version
 composer --version
@@ -27,6 +32,7 @@ mysql --version
 ```
 
 You should see something like this:
+
 ```sh
 This is perl 5, version 30, subversion 3 (v5.30.3) built for darwin-thread-multi-2level ...
 Composer version 2.6.3 2023-09-15 09:38:21
@@ -35,6 +41,7 @@ mysql  Ver 9.0.0 for macos14 on x86_64 (MySQL Community Server - GPL)
 ```
 
 ## N.B.
+
 You probably might not have installed one ore more of previously programs list.
 
 You have to install the missing program and then/or check environment `$PATH` variable by digiting the below command. 
@@ -53,7 +60,6 @@ If you do not see the program folder path, you migth add it by digiting the miss
 
 In my case, the `/etc/paths` file.
 
-
 ## Laravel Installation
 Please follow the laravel installation web page at [laravel installation page](https://laravel.com/docs/11.x/installation).
 
@@ -68,7 +74,6 @@ DB_PASSWORD=[your_user_root_password]
 ```
 
 Then you have to create the database `ecommerce` by using `mysql` program on command line.
-
 
 ```sh
 mysql> mysql --user=root --password
@@ -129,7 +134,85 @@ Let' start the server now and have a look at welcome web page on `http://127.0.0
 ```sh
 php artisan serve 
 ```
+
 <p style="margin: 0 auto; width: 60%;">
     <img src="./public/welcome.png" alt="welcome page">
 </p>
 
+## Bootstrap installation
+Please follow the Node JS interpreter installation web page at [Node installation page](https://nodejs.org/en/download/package-manager/current).
+
+Be sure to install the LTS version for your specific Operation System (and choose NVM)
+
+You may check them by digiting below commands in command line:
+
+```sh
+which node
+which npm
+```
+
+You should see something like this:
+
+```sh
+/usr/local/bin/node
+/usr/local/bin/npm
+```
+
+You also may check the program version by digiting following commands:
+
+```sh
+node --version
+npm --version
+```
+
+You should see something like this:
+
+```sh
+v18.19.1
+10.2.4
+```
+
+You are ready to add Boostrap on your project now
+
+Please follow the `laravel/ui` module installation by following [this page](https://laravel.com/docs/7.x/frontend)
+
+Below a summary of commands you have to run
+```sh
+composer require laravel/ui     ## it installs the UI module
+php artisan ui bootstrap        ## it updates some config files
+npm install && npm run build    ## it installs Boostrap and builds the new resources
+```
+
+Edit your main `blade.php` file by using this below:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    ...
+    <!-- It is useful for modern devices to set a default Content Width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- It is used to load bootstrap resources. Please look at vite.config.js file -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+  </head>
+  <body>
+    <!-- the Main tag is using the new classes whish are coming from Bootstrap! -->
+    <main class="container py-4 px-3 mx-auto">
+        <h1>Hello, Bootstrap and Vite!</h1>
+    </main>
+  </body>
+</html>
+
+```
+
+Let' start the server now and have a look at new web page on `http://127.0.0.1:8000/`
+
+and see the new Bootstrap classes applied
+
+```sh
+php artisan serve 
+```
+
+<p style="margin: 0 auto; width: 60%;">
+    <img src="./public/hello.png" alt="welcome page">
+</p>
