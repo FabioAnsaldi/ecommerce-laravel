@@ -216,3 +216,20 @@ php artisan serve
 <p style="margin: 0 auto; width: 60%;">
     <img src="./public/hello.png" alt="welcome page">
 </p>
+
+## Laravel components creation
+
+In this web-site we would like to use a simple layout shared to all web pages.
+
+To create a class based component, you may use the make:component Artisan command. 
+
+```sh
+php artisan make:component Layout
+```
+
+Then you should see something like this:
+
+```sh
+Component [app/View/Components/Layout.php] created successfully.
+View [resources/views/components/layout.blade.php] created successfully.
+```
