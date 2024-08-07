@@ -5,3 +5,17 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+/*
+* My Custom Variables
+*/
+
+// Custom Typography font-sizes
+$custom-font-sizes: (
+  1: 0.75rem,
+  2: 1rem,
+  3: 1.25rem,
+  4: 1.50rem,
+  5: 1.75rem,
+  6: 2rem,
+) !default;

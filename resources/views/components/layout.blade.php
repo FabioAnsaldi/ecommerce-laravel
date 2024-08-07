@@ -39,9 +39,9 @@
 
     <footer class="container py-4 px-3 mx-auto">
         <!-- $ECOMMERCE_VERSION comes from AppServiceProvider -->
-        Ecommerce <strong>v{{ $ECOMMERCE_VERSION }}</strong> -
-        Laravel <strong>v{{ Illuminate\Foundation\Application::VERSION }}</strong> -
-        PHP <strong>v{{ PHP_VERSION }}</strong>
+        Ecommerce <strong class="custom-font-size-2">v{{ $ECOMMERCE_VERSION }}</strong> -
+        Laravel <strong class="custom-font-size-2">v{{ Illuminate\Foundation\Application::VERSION }}</strong> -
+        PHP <strong class="custom-font-size-2">v{{ PHP_VERSION }}</strong>
     </footer>
 
     <!-- includes folder has all the sections part used to create the layout -->
